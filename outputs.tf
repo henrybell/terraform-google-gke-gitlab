@@ -19,6 +19,14 @@ output "gitlab_address" {
   description = "IP address where you can connect to your GitLab instance"
 }
 
+output "gitlab_url" {
+  value       = "https://gitlab.${local.gitlab_address}.xip.io"
+  description = "URL where you can access your GitLab instance"
+  depends_on = [
+    local.gitlab_address
+  ]
+}
+
 output "root_password_instructions" {
   value = <<EOF
 
