@@ -20,11 +20,9 @@ output "gitlab_address" {
 }
 
 output "gitlab_url" {
-  value       = "https://gitlab.${local.gitlab_address}.xip.io"
+  #value       = "https://gitlab.${local.gitlab_address}.xip.io"
+  value       = local.gitlab_address != "" ? "https://gitlab.${local.gitlab_address}.xip.io" : ""
   description = "URL where you can access your GitLab instance"
-  depends_on = [
-    local.gitlab_address
-  ]
 }
 
 output "root_password_instructions" {
