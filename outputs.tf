@@ -20,7 +20,7 @@ output "gitlab_address" {
 }
 
 output "gitlab_url" {
-  value       = ${local.gitlab_address == null ? "" : https://gitlab.${local.gitlab_address}.xip.io}
+  value       = ${local.gitlab_address == null ? "" : "https://gitlab.${local.gitlab_address}.xip.io"}
   description = "URL where you can access your GitLab instance"
 }
 
