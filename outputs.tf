@@ -19,11 +19,6 @@ output "gitlab_address" {
   description = "IP address where you can connect to your GitLab instance"
 }
 
-output "gitlab_url" {
-  value       = ${local.gitlab_address == null ? "" : "https://gitlab.${local.gitlab_address}.xip.io"}
-  description = "URL where you can access your GitLab instance"
-}
-
 output "root_password_instructions" {
   value = <<EOF
 
